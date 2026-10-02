@@ -1331,7 +1331,7 @@ html[data-nav-theme="light"] .nav-pill {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: #050816 url("/media/skills-bg.webp") center / cover no-repeat;
+  background: #050816 center / cover no-repeat; /* image set inline so it respects the base path */
   perspective: 1600px;
 }
 .skills-kicker {

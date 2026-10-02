@@ -6,6 +6,7 @@ import { hero } from "@/lib/content";
 import SpeechBubble from "../SpeechBubble";
 import RitualButton from "../RitualButton";
 import { ChevronDown } from "../Icons";
+import { asset } from "@/lib/asset";
 
 const DURATION = 5.167;
 
@@ -38,7 +39,7 @@ export default function Hero() {
 
   return (
     <section ref={section} id="home" className="hero-stage">
-      <video ref={video} className="hero-video" poster="/media/hero-poster.webp" style={{ backgroundImage: "url(/media/hero-poster.webp)" }} muted playsInline preload="auto" />
+      <video ref={video} className="hero-video" poster={asset("/media/hero-poster.webp")} style={{ backgroundImage: `url(${asset("/media/hero-poster.webp")})` }} muted playsInline preload="auto" />
       <div className="hero-vignette" aria-hidden />
 
       <div className="hero-bubble">

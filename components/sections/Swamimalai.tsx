@@ -6,6 +6,7 @@ import ProjectCaptionCard from "../ProjectCaptionCard";
 import ProjectLabel from "../ProjectLabel";
 import ProjectIntro from "../ProjectIntro";
 import { projects } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 const copy = projects.swamimalai;
 const DURATIONS = [1.281, 2.433, 3.381, 2.202, 2.164];
@@ -17,7 +18,7 @@ const INTRO = 0.25;
 function Clip({ i, setters }: { i: number; setters: ((t: number) => void)[] }) {
   const ref = useRef<HTMLVideoElement>(null);
   setters[i] = useScrubVideo(ref, `swami-${i + 1}`);
-  return <video ref={ref} className="project-video" poster={`/media/swami-${i + 1}-poster.webp`} style={{ backgroundImage: `url(/media/swami-${i + 1}-poster.webp)` }} muted playsInline preload="auto" />;
+  return <video ref={ref} className="project-video" poster={asset(`/media/swami-${i + 1}-poster.webp`)} style={{ backgroundImage: `url(${asset(`/media/swami-${i + 1}-poster.webp`)})` }} muted playsInline preload="auto" />;
 }
 
 /**

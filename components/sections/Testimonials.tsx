@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { testimonials } from "@/lib/content";
 import RitualButton from "../RitualButton";
+import { asset } from "@/lib/asset";
 
 function Stars({ n }: { n: number }) {
   return (
@@ -105,7 +106,7 @@ export default function Testimonials() {
             <article key={r.id} className="review-card">
               <div className="review-head">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="review-avatar" src={r.avatar} alt="" />
+                <img className="review-avatar" src={asset(r.avatar)} alt="" />
                 <div>
                   <div className="review-name">{r.name}</div>
                   <div className="review-meta">{r.meta}</div>

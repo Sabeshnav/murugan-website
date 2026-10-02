@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { skills } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 type Emblem = (typeof skills.cards)[number]["emblem"];
 
@@ -92,7 +93,7 @@ export default function Skills() {
   );
 
   return (
-    <section ref={section} className="skills-stage">
+    <section ref={section} className="skills-stage" style={{ backgroundImage: `url(${asset("/media/skills-bg.webp")})` }}>
       <span className="stage-kicker skills-kicker">03 · Skills</span>
       <div className="skills-deck">
         {skills.cards.map((c) => (

@@ -6,6 +6,7 @@ import ProjectLabel from "../ProjectLabel";
 import ProjectIntro from "../ProjectIntro";
 import ProjectCaptionCard from "../ProjectCaptionCard";
 import { projects } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 const DURATION = 6.1;
 const copy = projects.devas;
@@ -61,7 +62,7 @@ export default function LeadingTheDevas() {
 
   return (
     <section ref={section} className="project-stage">
-      <video ref={video} className="project-video" poster="/media/devas-poster.webp" style={{ backgroundImage: "url(/media/devas-poster.webp)" }} muted playsInline preload="auto" />
+      <video ref={video} className="project-video" poster={asset("/media/devas-poster.webp")} style={{ backgroundImage: `url(${asset("/media/devas-poster.webp")})` }} muted playsInline preload="auto" />
       <div className="project-shade" aria-hidden />
       <ProjectIntro index={copy.index} title={copy.title} tamil={copy.tamil} tagline={copy.tagline} />
       <ProjectLabel index={copy.index} title={copy.title} tamil={copy.tamil} />

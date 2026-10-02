@@ -6,6 +6,7 @@ import ProjectCaptionCard from "../ProjectCaptionCard";
 import ProjectLabel from "../ProjectLabel";
 import ProjectIntro from "../ProjectIntro";
 import { projects } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 const DURATION = 8.0;
 const copy = projects.soorasamharam;
@@ -54,7 +55,7 @@ export default function Soorasamharam() {
 
   return (
     <section ref={section} className="project-stage">
-      <video ref={video} className="project-video" poster="/media/sooras-poster.webp" style={{ backgroundImage: "url(/media/sooras-poster.webp)" }} muted playsInline preload="auto" />
+      <video ref={video} className="project-video" poster={asset("/media/sooras-poster.webp")} style={{ backgroundImage: `url(${asset("/media/sooras-poster.webp")})` }} muted playsInline preload="auto" />
       <div className="project-shade" aria-hidden />
       <ProjectIntro index={copy.index} title={copy.title} tamil={copy.tamil} tagline={copy.tagline} />
       <ProjectLabel index={copy.index} title={copy.title} tamil={copy.tamil} />

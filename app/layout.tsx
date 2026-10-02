@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { display, serif, tamil, ui } from "./fonts";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Murugan — Portfolio",
@@ -14,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${serif.variable} ${tamil.variable} ${ui.variable}`} data-nav-theme="dark">
       <head>
-        <link rel="preload" as="image" href="/media/hero-poster.webp" />
+        <link rel="preload" as="image" href={asset("/media/hero-poster.webp")} />
       </head>
       <body>{children}</body>
     </html>

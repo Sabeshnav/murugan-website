@@ -1,4 +1,5 @@
 "use client";
+import { asset } from "./asset";
 
 /** Phones and small tablets get the lighter 1280px encodes of the scrubbed clips. */
 export function isSmallScreen() {
@@ -6,7 +7,7 @@ export function isSmallScreen() {
 }
 
 export function scrubSrc(name: string) {
-  return `/media/${name}${isSmallScreen() ? "-sm" : ""}.mp4`;
+  return asset(`/media/${name}${isSmallScreen() ? "-sm" : ""}.mp4`);
 }
 
 const cache = new Map<string, Promise<string>>();

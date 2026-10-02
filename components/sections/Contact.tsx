@@ -5,6 +5,7 @@ import { setNavTheme } from "@/lib/nav";
 import RitualButton from "../RitualButton";
 import { VelIcon } from "../Icons";
 import { contact } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export default function Contact() {
   const section = useRef<HTMLElement>(null);
@@ -65,7 +66,7 @@ export default function Contact() {
   return (
     <section ref={section} className="contact-stage">
       <div className="contact-stage-inner">
-        <video className="contact-video" src="/media/contact.mp4" poster="/media/contact-poster.webp" autoPlay muted loop playsInline />
+        <video className="contact-video" src={asset("/media/contact.mp4")} poster={asset("/media/contact-poster.webp")} autoPlay muted loop playsInline />
         <div className="contact-shade" aria-hidden />
 
         <div className="contact-card-wrap">
@@ -98,7 +99,7 @@ export default function Contact() {
         <div className="contact-finale">
           <span className="contact-shock" aria-hidden />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="contact-vel" src="/media/finale-spear.webp" alt="" aria-hidden />
+          <img className="contact-vel" src={asset("/media/finale-spear.webp")} alt="" aria-hidden />
           <div className="contact-final">
             <h2 className="contact-tamil" lang="ta">
               {contact.tamil}

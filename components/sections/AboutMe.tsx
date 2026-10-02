@@ -5,6 +5,7 @@ import { setNavTheme } from "@/lib/nav";
 import SpeechBubble from "../SpeechBubble";
 import Rangoli from "../Rangoli";
 import { about } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export default function AboutMe() {
   const section = useRef<HTMLElement>(null);
@@ -83,8 +84,8 @@ export default function AboutMe() {
           <path d="M0 4 H10000" className="fz-line" />
         </svg>
       </div>
-      <video className="about-calm-bg about-bg" src="/media/about-calm.mp4" poster="/media/about-calm-poster.webp" autoPlay muted loop playsInline />
-      <video className="about-wrath-bg about-bg" src="/media/about-wrath.mp4" poster="/media/about-wrath-poster.webp" autoPlay muted loop playsInline />
+      <video className="about-calm-bg about-bg" src={asset("/media/about-calm.mp4")} poster={asset("/media/about-calm-poster.webp")} autoPlay muted loop playsInline />
+      <video className="about-wrath-bg about-bg" src={asset("/media/about-wrath.mp4")} poster={asset("/media/about-wrath-poster.webp")} autoPlay muted loop playsInline />
 
       <div className="about-intro">
         <div className="about-heading">
@@ -93,13 +94,13 @@ export default function AboutMe() {
           <p className="about-shy">{about.shy}</p>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="about-p1" src="/media/about-1.webp" alt="Murugan, shy and flattered" />
+        <img className="about-p1" src={asset("/media/about-1.webp")} alt="Murugan, shy and flattered" />
       </div>
 
       <div className="about-duo duo-calm">
         <div className="about-duo-inner">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="about-bust" src="/media/about-2.webp" alt="Murugan, calm and smiling" />
+        <img className="about-bust" src={asset("/media/about-2.webp")} alt="Murugan, calm and smiling" />
         <SpeechBubble tone="calm" tail="left" mobileTail="bottom" className="about-bubble">
           <p className="sb-lead sb-line">{about.calm.lead}</p>
           {about.calm.lines.map((l) => (
@@ -113,7 +114,7 @@ export default function AboutMe() {
       <div className="about-duo duo-wrath">
         <div className="about-duo-inner">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="about-bust" src="/media/about-3.webp" alt="Murugan, fierce, gripping the Vel" />
+        <img className="about-bust" src={asset("/media/about-3.webp")} alt="Murugan, fierce, gripping the Vel" />
         <SpeechBubble tone="wrath" tail="left" mobileTail="bottom" className="about-bubble">
           <p className="sb-lead sb-line">{about.wrath.lead}</p>
           {about.wrath.lines.map((l) => (
